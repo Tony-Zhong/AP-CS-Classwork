@@ -1,0 +1,117 @@
+S3C8Barry You
+cigarParty: 
+
+
+public boolean cigarParty(int cigars, boolean isWeekend) {
+    if (isWeekend) return (cigars >= 40);
+    return cigars >= 40 && cigars <= 60;
+}
+ 
+
+dateFashion:
+
+
+
+
+public int dateFashion(int you, int date) {
+    if (you <= 2 || date <= 2) return 0;
+    return (you >= 8 && date >= 2 || date >= 8 && you >= 2) ? 2 : 1;
+}
+ 
+
+squirrelPlay:
+
+
+
+
+public boolean squirrelPlay(int temp, boolean isSummer) {
+    return (isSummer) ? (temp >= 60 && temp <= 100)
+        : (temp >= 60 && temp <= 90);
+}
+ 
+
+caughtSpeeding:
+
+
+
+
+public int caughtSpeeding(int speed, boolean isBirthday) {
+    if (isBirthday) speed -= 5;
+    if (speed <= 60) return 0;
+    return (speed > 60 && speed <= 80) ? 1 : 2;
+}
+ 
+
+sortaSum:
+
+
+
+
+public int sortaSum(int a, int b) {
+    return (a + b >= 10 && a + b <= 19) ? 20 : a + b;
+}
+ 
+
+alarmClock:
+
+
+
+
+if (vacation) return (day >= 1 && day <= 5) ? "10:00" : "off";
+return (day >= 1 && day <= 5) ? "7:00" : "10:00";
+ 
+
+
+public String alarmClock(int day, boolean vacation) {
+    if (vacation) {
+        if (day >= 1 && day <= 5)
+            return "10:00";
+        return "off";
+    }
+    if (day >= 1 && day <= 5)
+        return "7:00";
+    return "10:00";
+}
+ 
+
+Ugly, isn¡¯t it?
+
+love6:
+
+
+
+
+public boolean love6(int a, int b) {
+    return a == 6 || b == 6 || a + b == 6 || Math.abs(a - b) == 6;
+}
+ 
+
+in1To10:
+
+
+
+
+public boolean in1To10(int n, boolean outsideMode) {
+    return (outsideMode) ? n <= 1 || n >= 10 : n >= 1 && n <= 10;
+}
+ 
+
+nearTen:
+
+
+
+
+public boolean nearTen(int num) {
+    return num % 10 >= 8 || num % 10 <= 2;
+}
+ 
+
+teenSum:
+
+
+
+
+public int teenSum(int a, int b) {
+    return (a >= 13 && a <= 19 || b >= 13 && b <= 19) ? 19 : a + b;
+}
+ 

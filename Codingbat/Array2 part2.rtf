@@ -1,0 +1,307 @@
+{\rtf1\ansi\ansicpg936\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fnil\fcharset134 STSongti-SC-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Tony Zhong\
+S3C7\
+\cf2 Array 2 part 2 
+\f1 and 3
+\f0  \
+\
+No14\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+public boolean no14(int[] nums) \{\
+  int ones = 0;\
+  int fours = 0;\
+    for (int i = 0; i < nums.length; i++) \{\
+        if (nums[i] == 1) ones++;\
+        if (nums[i] == 4) fours++;\
+    \}\
+    return ones == 0 || fours == 0;\
+\}\
+\
+isEverywhere\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 public boolean isEverywhere(int[] nums, int val) \{\
+\'a0\'a0\'a0\'a0boolean flag1 = true;\
+\'a0\'a0\'a0\'a0boolean flag2 = true;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i += 2)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] != val) flag1 = false;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length - 1; i += 2)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i + 1] != val) flag2 = false;\
+\'a0\'a0\'a0\'a0return flag1 || flag2;\
+\}\
+\
+Either24public boolean either24(int[] nums) \
+
+\itap2\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public boolean either24(int[] nums) \{\
+\'a0\'a0\'a0\'a0Boolean twos = false;\
+\'a0\'a0\'a0\'a0Boolean fours = false;\
+\'a0\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length - 1; i++) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 2 && nums[i + 1] == 2) twos = true;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 4 && nums[i + 1] == 4) fours = true;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return twos ^ fours;\
+\}\
+\nestcell \lastrow\nestrow\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 Matchup\
+public int matchUp(int[] nums1, int[] nums2) \{\
+\'a0\'a0\'a0\'a0int count = 0;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums1.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums1[i] != nums2[i]\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0&& Math.abs(nums1[i] - nums2[i]) <= 2)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0count++;\
+\'a0\'a0\'a0\'a0return count;\
+\}\
+\
+Has77\
+public boolean has77(int[] nums) \{\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length - 1; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 7 && nums[i + 1] == 7) return true;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length - 2; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 7 && nums[i + 2] == 7) return true;\
+\'a0\'a0\'a0\'a0return false;\
+\}\
+\
+Has12\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11851\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 public boolean has12(int[] nums) \{\
+\'a0\'a0\'a0\'a0int one = 0;\
+\'a0\'a0\'a0\'a0int two = 0;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 1) one = i;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 2) two = i;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return two > one;\
+\}\
+\
+modThree \cell \lastrow\row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public boolean modThree(int[] nums) \{\
+\'a0\'a0\'a0\'a0for (int i = 0; i <= nums.length - 3; i++) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0boolean cond1 = nums[i] % 2 == 0 && nums[i + 1] % 2 == 0\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0&& nums[i + 2] % 2 == 0;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0boolean cond2 = nums[i] % 2 == 1 && nums[i + 1] % 2 == 1\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0&& nums[i + 2] % 2 == 1;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (cond1 || cond2) return true;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return false;\
+\}\
+\
+Havethree \cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 public boolean haveThree(int[] nums) \{\
+\'a0\'a0\'a0\'a0int count = 0;\
+\'a0\'a0\'a0\'a0int pos = -2; // in case nums[0] == 3\
+\'a0\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 3) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0count++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (i - pos == 1) return false;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0pos = i;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\}\
+\'a0\
+\'a0\'a0\'a0\'a0return count == 3;\
+\}\
+\
+Twotwo \
+public boolean twoTwo(int[] nums) \{\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 2) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int count = 0;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int j = i; j < nums.length; j++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[j] == 2) count++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else break;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0i += count;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (count < 2) return false;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return true;\
+\}\
+\
+sameEnd\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11851\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 public boolean sameEnds(int[] nums, int len) \{\
+\'a0\'a0\'a0\'a0for (int i = 0, j = nums.length - len; i < len; i++, j++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] != nums[j]) return false;\
+\'a0\'a0\'a0\'a0return true;\
+\}\
+\
+TripleUp:\
+
+\itap2\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth12194\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public boolean tripleUp(int[] nums) \{\
+\'a0\'a0\'a0\'a0for (int i = 0; i <= nums.length - 3; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i + 1] == nums[i] + 1 && nums[i + 2] == nums[i] + 2)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0return true;\
+\'a0\'a0\'a0\'a0return false;\
+\}\nestcell \lastrow\nestrow
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \
+Shiftleft:\
+
+\itap2\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11851\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int[] shiftLeft(int[] nums) \{\
+\'a0\'a0\'a0\'a0if (nums.length > 0) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int first = nums[0];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length - 1; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0nums[i] = nums[i + 1];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0nums[nums.length - 1] = first;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return nums;\
+\}\nestcell \lastrow\nestrow
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \
+tenRun:\
+public int[] tenRun(int[] nums) \{\
+\'a0\'a0\'a0\'a0boolean replace = false;\
+\'a0\'a0\'a0\'a0int multiple = 0;\
+\'a0\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] % 10 == 0) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (!replace) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0replace = true;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0multiple = nums[i];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\} else\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0multiple = nums[i];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] % 10 != 0 && replace) nums[i] = multiple;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return nums;\
+\}\
+\
+pre4:\
+public int[] pre4(int[] nums) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int count = 0;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] != 4) count++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else break;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int[] result = new int[count];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int i = 0; i < result.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0result[i] = nums[i];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0return result;\
+\}\
+\
+Post4:\
+
+\itap2\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int[] post4(int[] nums) \{\
+\'a0\'a0\'a0\'a0int last4 = 0;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 4) last4 = i;\
+\'a0\'a0\'a0\'a0\'a0\
+\'a0\'a0\'a0\'a0int[] res = new int[nums.length - (last4 + 1)];\
+\'a0\'a0\'a0\'a0for (int i = last4 + 1, j = 0; i < nums.length; i++, j++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0res[j] = nums[i];\
+\'a0\'a0\'a0\'a0\'a0\
+\'a0\'a0\'a0\'a0return res;\
+\}\nestcell \lastrow\nestrow
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \
+notAlone:\
+
+\itap2\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11851\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int[] notAlone(int[] nums, int val) \{\
+\'a0\'a0\'a0\'a0for (int i = 1; i < nums.length - 1; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == val && nums[i - 1] != val\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0&& nums[i + 1] != val)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0nums[i] = Math.max(nums[i - 1], nums[i + 1]);\
+\'a0\'a0\'a0\'a0return nums;\
+\}\nestcell \lastrow\nestrow
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \
+ZeroFront:\
+public int[] zeroFront(int[] nums) \{\
+\'a0\'a0\'a0\'a0int[] res\'a0\'a0\'a0\'a0\'a0 = new int[nums.length];\
+\'a0\'a0\'a0\'a0int zeroPos\'a0\'a0\'a0 = 0;\
+\'a0\'a0\'a0\'a0int nonZeroPos = res.length - 1;\
+\'a0\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 0)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0res[zeroPos++]\'a0\'a0\'a0 = 0;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0res[nonZeroPos--] = nums[i];\
+\'a0\
+\'a0\'a0\'a0\'a0return res;\
+\}\
+\
+WithoutTen:\
+public int[] withoutTen(int[] nums) \{\
+\'a0\'a0\'a0\'a0int[] copy = new int[nums.length];\
+\'a0\'a0\'a0\'a0int index = 0;\
+\'a0\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] != 10) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0copy[index] = nums[i];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0index++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return copy;\
+\}\
+\
+zeroMax:\
+
+\itap2\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int[] zeroMax(int[] nums) \{\
+\'a0\'a0\'a0\'a0int largestOdd = 0;\
+\'a0\'a0\'a0\'a0for (int i = nums.length - 1; i >= 0; i--) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] % 2 == 1 && nums[i] > largestOdd)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0largestOdd = nums[i];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 0)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0nums[i] = largestOdd;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return nums;\
+\}\nestcell \lastrow\nestrow
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \
+evenOdd:\
+
+\itap2\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap2\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int[] evenOdd(int[] nums) \{\
+\'a0\'a0\'a0\'a0int[] res\'a0\'a0 = new int[nums.length];\
+\'a0\'a0\'a0\'a0int evenPos = 0;\
+\'a0\'a0\'a0\'a0int oddPos\'a0 = res.length - 1;\
+\'a0\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] % 2 == 0)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0res[evenPos++] = nums[i];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0res[oddPos--]\'a0 = nums[i];\
+\'a0\'a0\'a0\'a0return res;\
+\}\nestcell \lastrow\nestrow
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cell \lastrow\row
+}

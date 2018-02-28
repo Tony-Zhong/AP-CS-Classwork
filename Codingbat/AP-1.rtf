@@ -1,0 +1,404 @@
+{\rtf1\ansi\ansicpg936\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fnil\fcharset0 Monaco;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red52\green52\blue52;
+\red159\green159\blue159;\red10\green82\blue135;\red98\green98\blue98;\red0\green0\blue0;\red18\green139\blue2;
+\red15\green114\blue1;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;\cssrgb\c26667\c26667\c26667;
+\cssrgb\c68627\c68627\c68627;\cssrgb\c0\c40000\c60000;\cssrgb\c45882\c45882\c45882;\cssrgb\c0\c0\c0;\cssrgb\c0\c60000\c0;
+\cssrgb\c0\c50980\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 Tony Zhong\
+S3C7\
+AP Computer Science\
+AP-1\
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+scoresIncreasing \
+public boolean scoresIncreasing(int[] scores) \{\
+\'a0\'a0\'a0\'a0for (int i = 0; i <= scores.length - 2; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (scores[i] > scores[i + 1]) return false;\
+\'a0\'a0\'a0\'a0return true;\
+\}\
+\
+Scores100\
+public boolean scores100(int[] scores) \{\'a0 \
+\'a0\'a0\'a0\'a0for (int i = 0; i <= scores.length - 2; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (scores[i] == 100 && scores[i + 1] == 100) return true;\
+\'a0\'a0\'a0\'a0return false;\
+\}\
+\
+scoresClump\
+public boolean scoresClump(int[] scores) \{\
+    if (scores.length > 2) \{\
+        for (int i = 0; i < scores.length - 2; i++) \{\
+            if (scores[i + 2] - scores[i] <= 2)\
+                return true;\
+        \}\
+    \}\
+    return false;\
+\}\
+\
+scoresAverage\
+public int scoresAverage(int[] scores) \{\
+    int first = average(scores, 0, scores.length / 2);\
+    int second = average(scores, scores.length / 2, scores.length);\
+    return Math.max(first, second);\
+\}\
+ \
+private int average(int[] scores, int start, int end) \{\
+    int sum = 0;\
+    int count = 0;\
+    for (int i = start; i < end; i++) \{\
+        sum += scores[i];``\
+        count++;\
+    \}\
+    return sum / count;\
+\}\
+\
+wordsCount\
+public int wordsCount(String[] words, int len) \{\
+    int count = 0;\
+    for (int i = 0; i < words.length; i++)\
+        if (words[i].length() == len) count++;\
+    return count;\
+\}\
+\
+wordsfrount\
+public String[] wordsFront(String[] words, int n) \{\
+    String[] newWords = new String[n];\
+    for (int i = 0; i < n; i++)\
+        newWords[i] = words[i];\
+    return newWords;\
+\}\
+\
+wordsWithoutlist\
+public List wordsWithoutList(String[] words, int len) \{\
+    List result = new ArrayList();\
+    for (int i = 0; i < words.length; i++)\
+        if (words[i].length() != len)\
+            result.add(words[i]);\
+    return result;\
+\}\
+\
+hasOne\
+public boolean hasOne(int n) \{\
+    while (n > 0) \{\
+        if (n % 10 == 1) return true;\
+        n = n / 10;\
+    \}\
+    return false;\
+\}\
+\
+dividesSelf\cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth648\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11851\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 \
+\
+\
+\
+\
+\
+\
+\cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public boolean dividesSelf(int n) \{\
+\'a0\'a0\'a0\'a0int copyN = n;\
+\'a0\'a0\'a0\'a0while (n > 0)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (n % 10 == 0) return false;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (copyN % (n % 10) == 0) n /= 10;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else return false;\
+\'a0\'a0\'a0\'a0return true;\
+\}\
+\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 copyEvens\cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth816\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int[] copyEvens(int[] nums, int count) \{\
+\'a0\'a0\'a0\'a0int[] result = new int[count];\
+\'a0\'a0\'a0\'a0int position = 0;\
+\'a0\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] % 2 == 0) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0result[position] = nums[i];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0position++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (position == count) break;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return result;\
+\}\
+\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 copyEndy\cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth816\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 \
+\
+\
+\
+\
+\
+\
+\
+\
+\cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int[] copyEndy(int[] nums, int count) \{\
+\'a0\'a0\'a0\'a0int[] result = new int[count];\
+\'a0\'a0\'a0\'a0for (int i = 0, pos = 0; i < nums.length; i++) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] >= 0 && nums[i] <= 10 || nums[i] >= 90\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0&& nums[i] <= 100) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0result[pos] = nums[i];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0pos++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (pos == count) break;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return result;\
+\}\
+\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 matchUp\cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth648\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11851\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 \
+\
+\
+\
+\
+\
+\cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int matchUp(String[] a, String[] b) \{\
+\'a0\'a0\'a0\'a0int count = 0;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < a.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (!a[i].equals("") && !b[i].equals("")\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0&& a[i].charAt(0) == b[i].charAt(0))\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0count++;\
+\'a0\'a0\'a0\'a0return count;\
+\}\
+\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 scoreUp\cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth648\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11851\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 \
+\
+\
+\
+\
+\
+\cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int scoreUp(String[] key, String[] answers) \{\
+\'a0\'a0\'a0\'a0int sum = 0;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < answers.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (answers[i] == key[i]) sum += 4;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else if (!answers[i].equals("?")) sum -= 1;\
+\'a0\'a0\'a0\'a0return sum;\
+\}\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \
+wordsWithout:\
+public String[] wordsWithout(String[] words, String target) \{\
+    int count = 0;\
+    for (int i = 0; i < words.length; i++)\
+        if (!words[i].equals(target)) count++;\
+ \
+    String[] result = new String[count];\
+    for (int i = 0, pos = 0; i < words.length; i++)\
+        if (!words[i].equals(target)) \{\
+            result[pos] = words[i];\
+            pos++;\
+        \}\
+    return result;\
+\}\
+\
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f1\b \cf2 \cb3 scoresSpecial:
+\b0 \cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth816\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f0 \cf2 \cb3 \cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int scoresSpecial(int[] a, int[] b) \{\
+\'a0\'a0\'a0\'a0return largest(a) + largest(b);\
+\}\
+\'a0\
+\'a0\
+public int largest(int[] array) \{\
+\'a0\'a0\'a0\'a0int result = 0;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < array.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (array[i] % 10 == 0 && array[i] > result)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0result = array[i];\
+\'a0\'a0\'a0\'a0return result;\
+\}\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f1\b \cf2 \cb3 sumHeights:
+\b0 \cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth648\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11851\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f0 \cf2 \cb3 \cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int sumHeights(int[] heights, int start, int end) \{\
+\'a0\'a0\'a0\'a0int sum = 0;\
+\'a0\'a0\'a0\'a0for (int i = start; i < end; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0sum += Math.abs(heights[i] - heights[i + 1]);\
+\'a0\'a0\'a0\'a0return sum;\
+\}\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f1\b \cf2 \cb3 sumHeights2:
+\b0 \cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth648\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11851\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f0 \cf2 \cb3 \cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int sumHeights2(int[] heights, int start, int end) \{\
+\'a0\'a0\'a0\'a0int sum = 0;\
+\'a0\'a0\'a0\'a0for (int i = start; i < end; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (heights[i] < heights[i + 1])\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0sum += (2 * Math.abs(heights[i] - heights[i + 1]));\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0sum += Math.abs(heights[i] - heights[i + 1]);\
+\'a0\'a0\'a0\'a0return sum;\
+\}\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f1\b \cf2 \cb3 bigHeights:
+\b0 \cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth648\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11851\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f0 \cf2 \cb3 \cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int bigHeights(int[] heights, int start, int end) \{\
+\'a0\'a0\'a0\'a0int count = 0;\
+\'a0\'a0\'a0\'a0for (int i = start; i < end; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (Math.abs(heights[i] - heights[i + 1]) >= 5) count++;\
+\'a0\'a0\'a0\'a0return count;\
+\}\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f1\b \cf2 \cb3 userCompare:
+\b0 \cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth648\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth12622\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f0 \cf2 \cb3 \cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int userCompare(String aName, int aId, String bName, int bId) \{\
+\'a0\'a0\'a0\'a0if (aName.compareTo(bName) < 0) return -1;\
+\'a0\'a0\'a0\'a0if (aName.equals(bName)) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (aId == bId) return 0;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (aId < bId) return -1;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return 1;\
+\}\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f1\b \cf2 \cb3 mergeTwo:
+\b0 \cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth816\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f0 \cf2 \cb3 \cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public String[] mergeTwo(String[] a, String[] b, int n) \{\
+\'a0\'a0\'a0\'a0String[] result = new String[n];\
+\'a0\'a0\'a0\'a0int indexResult = 0;\
+\'a0\'a0\'a0\'a0int indexA = 0;\
+\'a0\'a0\'a0\'a0int indexB = 0;\
+\'a0\
+\'a0\'a0\'a0\'a0while (indexResult < n)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (a[indexA].compareTo(b[indexB]) < 0)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0result[indexResult++] = a[indexA++];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else if (a[indexA].compareTo(b[indexB]) > 0)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0result[indexResult++] = b[indexB++];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else \{ // identical strings\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0result[indexResult++] = a[indexA++];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0indexB++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return result;\
+\}\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f1\b \cf2 \cb3 commonTwo:
+\b0 \cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth816\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+
+\f0 \cf2 \cb3 \cell 
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 public int commonTwo(String[] a, String[] b) \{\
+\'a0\'a0\'a0\'a0int count = 0;\
+\'a0\'a0\'a0\'a0String lastChecked = null;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < a.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (!a[i].equals(lastChecked))\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int j = 0; j < b.length; j++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (a[i].equals(b[j])) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0count++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0lastChecked = a[i];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0break;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return count;\
+\}\cell \lastrow\row
+}

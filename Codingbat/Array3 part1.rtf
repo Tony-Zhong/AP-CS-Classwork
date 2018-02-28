@@ -1,0 +1,177 @@
+{\rtf1\ansi\ansicpg936\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red10\green82\blue135;
+\red98\green98\blue98;\red0\green0\blue0;\red18\green139\blue2;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c40000\c60000;
+\cssrgb\c45882\c45882\c45882;\cssrgb\c0\c0\c0;\cssrgb\c0\c60000\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 Tony Zhong\
+S3C7\
+Array3 part1\
+\
+maxSpan:\
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+public int maxSpan(int[] nums) \{\
+\'a0\'a0\'a0\'a0if (nums.length > 0) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int maxSpan = 1;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int j = nums.length - 1; j > i; j--)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[j] == nums[i]) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int count = (j - i) + 1;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (count > maxSpan) maxSpan = count;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0break;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0return maxSpan;\
+\'a0\'a0\'a0\'a0\} else return 0;\
+\}\
+\
+Fix34:\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 public int[] fix34(int[] nums) \{\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 3) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int temp = nums[i + 1];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0nums[i + 1] = 4;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int j = i + 2; j < nums.length; j++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[j] == 4) nums[j] = temp;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return nums;\
+\}\
+\
+Fix45:\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 public int[] fix45(int[] nums) \{\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 5 && i == 0\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0|| nums[i] == 5 && nums[i - 1] != 4) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int pos5 = i;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int j = 0; j < nums.length; j++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[j] == 4 && nums[j + 1] != 5) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int temp = nums[j + 1];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0nums[j + 1] = 5;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0nums[pos5] = temp;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0break;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return nums;\
+\}\
+\
+Canbalance:\
+public boolean canBalance(int[] nums) \{\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++) \{ \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int sum = 0;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int j = 0; j < i; j++) sum += nums[j];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int j = i; j < nums.length; j++) sum -= nums[j];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (sum == 0) return true;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return false;\
+\}\
+\
+Linerin:\
+public boolean linearIn(int[] outer, int[] inner) \{\
+\'a0\'a0\'a0\'a0int indexInner = 0;\
+\'a0\'a0\'a0\'a0int indexOuter = 0;\
+\'a0\'a0\'a0\'a0while (indexInner < inner.length && indexOuter < outer.length) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (outer[indexOuter] == inner[indexInner]) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0indexOuter++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0indexInner++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\} else indexOuter++;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return (indexInner == inner.length);\
+\}\
+\
+Squareup:\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 public int[] squareUp(int n) \{\
+\'a0\'a0\'a0\'a0int[] result = new int[n * n];\
+\'a0\'a0\'a0\'a0int pos = 0;\
+\'a0\
+\'a0\'a0\'a0\'a0for (int i = 1; i &lt;= n; i++) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int k = 1; k &lt;= n - i; k++) result[pos++] = 0;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int j = i; j &gt; 0; j--) result[pos++] = j;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return result;\
+\}\
+\
+Seriesup:\cell \lastrow\row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth11683\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 public int[] seriesUp(int n) \{\
+\'a0\'a0\'a0\'a0int[] result = new int[n * (n + 1) / 2];\
+\'a0\'a0\'a0\'a0int pos = 0;\
+\'a0\'a0\'a0\'a0int i = 1;\
+\'a0\'a0\'a0\'a0while (i &lt;= n + 1) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int j = 1; j &lt; i; j++) result[pos++] = j;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0i++;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return result;\
+\}\
+\
+Macmirror:\cell \lastrow\row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth12758\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 public int maxMirror(int[] nums) \{\
+\'a0\'a0\'a0\'a0int[] numsCopy = new int[nums.length];\
+\'a0\'a0\'a0\'a0for (int i = nums.length - 1, j = 0; i &gt;= 0; i--, j++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0numsCopy[j] = nums[i];\
+\'a0\
+\'a0\'a0\'a0\'a0int max = 0;\
+\'a0\
+\'a0\'a0\'a0\'a0for (int i = 0; i &lt; nums.length; i++) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int count = 0;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int pos1 = i;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0int pos2 = 0;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0boolean flag = false;\
+\'a0\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0while (pos1 &lt; nums.length &amp;&amp; pos2 &lt; nums.length) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (!flag) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[pos1] != numsCopy[pos2]) pos2++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0flag = true;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0count = 1;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0pos1++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0pos2++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\} else \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[pos1] == numsCopy[pos2]) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0count++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0pos1++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0pos2++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\} else \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (count &gt; max) max = count;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0pos1 = i;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0flag = false;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (count &gt; max) max = count;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return max;\
+\}\
+\
+countClumps:\cell \lastrow\row
+\pard\pardeftab720\parhyphenfactor20\partightenfactor0
+\cf2 \cb3 public int countClumps(int[] nums) \{\
+\'a0\'a0\'a0\'a0int count = 0;\
+\'a0\'a0\'a0\'a0for (int i = 0; i &lt; nums.length - 1; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == nums[i + 1]) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0count++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0for (int j = i + 1; j &lt; nums.length; j++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[j] == nums[i]) i++;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else break;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return count;\
+\}}
